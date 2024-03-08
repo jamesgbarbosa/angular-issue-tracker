@@ -11,8 +11,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class IssuesListComponent implements OnInit {
   @Input() issuesList: any;
   @Output() onDeleteIssue = new EventEmitter<any>();
+  @Output() onEditIssue = new EventEmitter<any>();
   
   ngOnInit(): void {
+  }
+
+  editIssue(id: any) {
+    this.onEditIssue.emit(id)
   }
 
   deleteIssue(id: any) {
@@ -20,5 +25,4 @@ export class IssuesListComponent implements OnInit {
       this.onDeleteIssue.emit(id)
     } 
   }
-
 }

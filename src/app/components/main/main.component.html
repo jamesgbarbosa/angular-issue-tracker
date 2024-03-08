@@ -1,2 +1,2 @@
 <app-header (onCreateIssue)="openCreateIssueDialog()"/>
-<app-issues-list [issuesList]="issuesList" (onDeleteIssue)="deleteIssue($event)"/>
+<app-issues-list [issuesList]="issuesList" (onEditIssue)="editIssue($event)" (onDeleteIssue)="deleteIssue($event)"/>

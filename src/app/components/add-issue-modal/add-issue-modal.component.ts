@@ -14,10 +14,11 @@ export class AddIssueModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any, private _fb: FormBuilder) {}
 
   form: FormGroup | any;
-
+  
   ngOnInit(): void {
+    let obj = this.data.issue;
     this.form = this._fb.group({
-      issueName: ['', Validators.required],
+      issueName: [obj?.issueName || '', Validators.required],
     })
   }
 
@@ -25,7 +26,7 @@ export class AddIssueModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  add() {
+  submit() {
     this.dialogRef.close(this.form.value)
   }
 }

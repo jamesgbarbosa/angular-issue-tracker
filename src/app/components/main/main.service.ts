@@ -18,4 +18,12 @@ export class MainService {
     deleteIssues(req: any) {
         return this._http.delete('http://localhost:3000/issue').toPromise();
     }
+
+    getIssue(id: any) {
+        return this._http.get(`http://localhost:3000/issue/${id}`).toPromise();
+    }
+
+    editIssue(req: any) {
+        return this._http.put(`http://localhost:3000/issue`, req).toPromise();
+    }
 }

@@ -2,15 +2,23 @@
     <table class="table">
         <thead>
             <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Issue Name</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let it of issuesList">
                 <td>
+                    {{it?.id}}
+                </td>
+                <td>
                     {{it?.issueName}}
                 </td>
                 <td>
+                    <button (click)="editIssue(it?.id)">
+                        Edit
+                    </button>
                     <button (click)="deleteIssue(it?.id)">
                         Delete
                     </button>

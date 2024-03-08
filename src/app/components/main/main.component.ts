@@ -57,4 +57,24 @@ export class MainComponent implements OnInit {
       alert("API Failed")
     })
   }
+
+  editIssue(id: any) {
+    this.mainService.getIssue(id).then((res) => {
+      if (res) {
+        const dialogRef = this.dialog.open(AddIssueModalComponent, {
+          data: {issue: res}
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          if (result) {
+            this.mainService.editIssue(result).then((res: any) => {
+              alert(`Issue ${id} successfully updated`);
+            })
+          }
+        })
+      }
+    }).catch((err) => {
+      alert("API Failed")
+    })
+  }
 }
