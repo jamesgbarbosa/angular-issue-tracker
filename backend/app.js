@@ -16,6 +16,13 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/issues', async (req, res) => {
+    const fileContent = await fs.readFile('./data/get_issues.json');
+    setTimeout(() => {
+        res.status(200).send(fileContent)
+    }, 10)
+});
+
 app.post('/issue', async (req, res) => {
     const fileContent = await fs.readFile('./data/success.json');
 
