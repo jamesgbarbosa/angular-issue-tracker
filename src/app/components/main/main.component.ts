@@ -49,7 +49,7 @@ export class MainComponent implements OnInit {
   }
 
   deleteIssue(id: any) {
-    this.mainService.deleteIssues({id: id}).then((res) => {
+    this.mainService.deleteIssue(id).then((res) => {
       if (res) {
         alert(`Successfully deleted issue: ${id}`)
       }

@@ -15,8 +15,8 @@ export class MainService {
         return this._http.post('http://localhost:3000/issue', req).toPromise();
     }
 
-    deleteIssues(req: any) {
-        return this._http.delete('http://localhost:3000/issue').toPromise();
+    deleteIssue(id: any) {
+        return this._http.delete(`http://localhost:3000/issue/${id}`,).toPromise();
     }
 
     getIssue(id: any) {

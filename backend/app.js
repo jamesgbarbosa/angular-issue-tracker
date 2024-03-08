@@ -31,7 +31,7 @@ app.post('/issue', async (req, res) => {
     }, 10)
 });
 
-app.delete('/issue', async (req, res) => {
+app.delete('/issue/:id', async (req, res) => {
     const fileContent = await fs.readFile('./data/success.json');
 
     setTimeout(() => {
