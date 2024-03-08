@@ -1,0 +1,16 @@
+<div id="issues">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Issue Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let it of issues">
+                <td>
+                    {{it?.name}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
