@@ -10,17 +10,21 @@ import { IssuesListService } from './issues-list.service';
   styleUrl: './issues-list.component.scss'
 })
 export class IssuesListComponent implements OnInit {
-  issuesList: any;
-  ngOnInit(): void {
-    this.issuesListService.getIssuesList().then((res: any) => {
-      if (res) {
-        this.issuesList = res;
-      }
-    })
+  @Input() issuesList: any;
 
+  ngOnInit(): void {
   }
 
   constructor(private issuesListService: IssuesListService) {
+  }
+
+  onDeleteIssue() {
+    if (confirm("Are you sure you want to delete?") == true) {
+      alert("Dete")
+    } else {
+      alert("Det2e")
+
+    }
   }
 
 }

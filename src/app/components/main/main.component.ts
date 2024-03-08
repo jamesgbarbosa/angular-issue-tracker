@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IssuesListComponent } from '../issues-list/issues-list.component';
 import { HeaderComponent } from '../header/header.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,10 +12,18 @@ import { MainService } from './main.service';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
-export class MainComponent {
-
+export class MainComponent implements OnInit {
+  issuesList = [];
+  
   constructor(private dialog: MatDialog, private mainService: MainService) {
 
+  }
+  ngOnInit(): void {
+    this.mainService.getIssuesList().then((res: any) => {
+      if (res) {
+        this.issuesList = res;
+      }
+    })
   }
 
   openCreateIssueDialog() {
