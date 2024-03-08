@@ -1,7 +1,7 @@
 [
-    {"id": 1, "issueName": "Something broked in the system"},
-    {"id": 2, "issueName": "Something broked in the system1"},
-    {"id": 3, "issueName": "Something broked in the system32"},
-    {"id": 4, "issueName": "Something broked in the system32"},
-    {"id": 5, "issueName": "Something broked in the system4"}
+    {"id": 1, "issueName": "Something broked in the system", "description": "Some bug "},
+    {"id": 2, "issueName": "Something broked in the system1", "description": "Some bug "},
+    {"id": 3, "issueName": "Something broked in the system32", "description": "Some bug "},
+    {"id": 4, "issueName": "Something broked in the system32", "description": "Some bug "},
+    {"id": 5, "issueName": "Something broked in the system4", "description": "Some bug "}
 ]

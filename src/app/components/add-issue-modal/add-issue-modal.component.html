@@ -5,6 +5,10 @@
             <label for="issueName" class="form-label">Issue Name</label>
             <input id="issueName" class="form-control" formControlName="issueName" type="text" />
         </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input id="description" class="form-control" formControlName="description" type="text" />
+        </div>
         
         <button type="button" class="btn btn-light" (click)="close()">Close</button>
         <button type="button" class="btn btn-primary" [disabled]="form.invalid" (click)="submit()">Submit</button>

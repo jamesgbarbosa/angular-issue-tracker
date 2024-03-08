@@ -19,6 +19,7 @@ export class AddIssueModalComponent implements OnInit {
     let obj = this.data.issue;
     this.form = this._fb.group({
       issueName: [obj?.issueName || '', Validators.required],
+      description: [obj?.description || '', Validators.required],
     })
   }
 

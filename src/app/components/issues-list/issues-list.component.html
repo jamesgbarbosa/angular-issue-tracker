@@ -4,6 +4,7 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Issue Name</th>
+                <th scope="col">Descriptioni</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -14,6 +15,9 @@
                 </td>
                 <td>
                     {{it?.issueName}}
+                </td>
+                <td>
+                    {{it?.description}}
                 </td>
                 <td>
                     <button (click)="editIssue(it?.id)">
