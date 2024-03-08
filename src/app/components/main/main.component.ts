@@ -3,6 +3,7 @@ import { IssuesListComponent } from '../issues-list/issues-list.component';
 import { HeaderComponent } from '../header/header.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddIssueModalComponent } from '../add-issue-modal/add-issue-modal.component';
+import { MainService } from './main.service';
 
 @Component({
   selector: 'app-main',
@@ -13,20 +14,29 @@ import { AddIssueModalComponent } from '../add-issue-modal/add-issue-modal.compo
 })
 export class MainComponent {
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private mainService: MainService) {
 
   }
 
   openCreateIssueDialog() {
-    console.log("ad")
     const dialogRef = this.dialog.open(AddIssueModalComponent, {
-      data: { }
+      data: {}
     });
 
-    dialogRef.afterClosed().subscribe( result => {
+    dialogRef.afterClosed().subscribe(result => {
       if (result) {
-
+        this._createIssue(result);
       }
+    })
+  }
+
+  _createIssue(result: any) {
+    this.mainService.createIssue(result).then((res) => {
+      if (res) {
+        this._createIssue
+      }
+    }).catch((err) => {
+      alert("API Failed")
     })
   }
 }
