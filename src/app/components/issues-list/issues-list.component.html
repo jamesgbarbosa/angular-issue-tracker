@@ -6,9 +6,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let it of issues">
+            <tr *ngFor="let it of issuesList">
                 <td>
-                    {{it?.name}}
+                    {{it?.issueName}}
+                </td>
+                <td>
+                    <button>
+                        Delete
+                    </button>
                 </td>
             </tr>
         </tbody>
