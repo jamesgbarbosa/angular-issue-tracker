@@ -42,6 +42,7 @@ export class MainComponent implements OnInit {
     this.mainService.createIssue(result).then((res) => {
       if (res) {
         this.createIssue(result);
+        alert("Successfully create issue!")
       }
     }).catch((err) => {
       alert("API Failed")
