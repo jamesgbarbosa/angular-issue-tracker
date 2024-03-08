@@ -1,5 +1,5 @@
 <div class="modal-container">
-    <h3>Add Transaction</h3>
+    <h3>{{mode == 'ADD' ? 'Add' : 'Edit'}} Transaction</h3>
     <form [formGroup]="form">
         <div class="mb-3">
             <label for="issueName" class="form-label">Issue Name</label>

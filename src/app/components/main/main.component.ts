@@ -62,7 +62,7 @@ export class MainComponent implements OnInit {
     this.mainService.getIssue(id).then((res) => {
       if (res) {
         const dialogRef = this.dialog.open(AddIssueModalComponent, {
-          data: {issue: res}
+          data: {issue: res, mode: "EDIT"}
         });
     
         dialogRef.afterClosed().subscribe(result => {

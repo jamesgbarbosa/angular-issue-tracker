@@ -14,9 +14,10 @@ export class AddIssueModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any, private _fb: FormBuilder) {}
 
   form: FormGroup | any;
-  
+  mode = 'ADD'
   ngOnInit(): void {
     let obj = this.data.issue;
+    this.mode = this.data.mode;
     this.form = this._fb.group({
       issueName: [obj?.issueName || '', Validators.required],
       description: [obj?.description || '', Validators.required],
