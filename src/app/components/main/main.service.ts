@@ -7,11 +7,15 @@ export class MainService {
 
     }
 
+    getIssuesList() {
+        return this._http.get('http://localhost:3000/issues').toPromise();
+    }
+
     createIssue(req: any) {
         return this._http.post('http://localhost:3000/issue', req).toPromise();
     }
 
-    getIssuesList() {
-        return this._http.get('http://localhost:3000/issues').toPromise();
+    deleteIssues(req: any) {
+        return this._http.delete('http://localhost:3000/issue').toPromise();
     }
 }

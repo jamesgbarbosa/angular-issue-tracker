@@ -14,7 +14,7 @@ import { MainService } from './main.service';
 })
 export class MainComponent implements OnInit {
   issuesList = [];
-  
+
   constructor(private dialog: MatDialog, private mainService: MainService) {
 
   }
@@ -33,15 +33,25 @@ export class MainComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this._createIssue(result);
+        this.createIssue(result);
       }
     })
   }
 
-  _createIssue(result: any) {
+  createIssue(result: any) {
     this.mainService.createIssue(result).then((res) => {
       if (res) {
-        this._createIssue
+        this.createIssue(result);
+      }
+    }).catch((err) => {
+      alert("API Failed")
+    })
+  }
+
+  deleteIssue(id: any) {
+    this.mainService.deleteIssues({id: id}).then((res) => {
+      if (res) {
+        alert(`Successfully deleted issue: ${id}`)
       }
     }).catch((err) => {
       alert("API Failed")

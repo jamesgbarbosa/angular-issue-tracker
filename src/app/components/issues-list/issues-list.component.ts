@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { IssuesListService } from './issues-list.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-issues-list',
@@ -11,20 +10,15 @@ import { IssuesListService } from './issues-list.service';
 })
 export class IssuesListComponent implements OnInit {
   @Input() issuesList: any;
-
+  @Output() onDeleteIssue = new EventEmitter<any>();
+  
   ngOnInit(): void {
   }
 
-  constructor(private issuesListService: IssuesListService) {
-  }
-
-  onDeleteIssue() {
+  deleteIssue(id: any) {
     if (confirm("Are you sure you want to delete?") == true) {
-      alert("Dete")
-    } else {
-      alert("Det2e")
-
-    }
+      this.onDeleteIssue.emit(id)
+    } 
   }
 
 }
