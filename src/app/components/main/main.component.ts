@@ -41,7 +41,6 @@ export class MainComponent implements OnInit {
   createIssue(result: any) {
     this.mainService.createIssue(result).then((res) => {
       if (res) {
-        this.createIssue(result);
         alert("Successfully create issue!")
       }
     }).catch((err) => {
